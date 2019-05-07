@@ -40,10 +40,10 @@ render (){
   
   return (
     <div className="App">
-    <h1>Count</h1>
-    <h2>{count}</h2>
+    <div>
     <Counter incrementCount={this.incrementCount} decrementCount={this.decrementCount}/>
-   <h1>Form</h1>
+    <h2>{count}</h2>
+    </div>
     <Form  UserInfo={this.UserInfo} handleInput = {this.handleInput}/>
     <p>{form.name}</p>
     <p>{form.surname}</p>
