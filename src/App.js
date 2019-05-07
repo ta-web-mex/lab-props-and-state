@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   handleChange = e => {
+    e.preventDefault()
     if(e.target.name==='send') e.preventDefault()
     const { form } = this.state
     form[e.target.name] = e.target.value
@@ -34,11 +35,11 @@ class App extends Component {
 
   render() {
     const { count } = this.state
-    const {form} = this.state
     return (
+      
       <div className="App">
         <Counter increment={this.increment} decrement={this.decrement} value={count} />
-        <Form handleChange={this.handleChange} inputsValue={form} />
+        <Form handleChange={this.handleChange} inputsValue={this.state.form} />
       </div>
     )
   }
