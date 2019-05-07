@@ -16,9 +16,11 @@ class App extends Component {
   }
   handleSubmit = e => {
     e.preventDefault()
-    console.log(this.state.form)
+    // console.log(this.state.form)
   }
   handleInput = e => {
+    // console.log(e)
+    // console.log(this)
     const { name, value } = e.target
     const form = { ...this.state.form, [name]: value }
     this.setState({form})
@@ -43,7 +45,7 @@ class App extends Component {
         name        = { this.state.form.name }
         surname     = { this.state.form.surname }
         age         = { this.state.form.age }
-        handleInput = { this.handleSubmit }
+        handleInput = { this.handleInput }
       />
     </div>
   )
