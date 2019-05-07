@@ -9,11 +9,23 @@ function Counter({ count, increment, decrement }) {
     <div>
       <Row>
         <Col span={12} offset={6}>
-          <Card title="Counter" style={{ width: 300 }}>
+          <Card
+            style={{
+              width: 300,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <h2 style={{ textAlign: 'center' }}>Counter</h2>
             <Button type="primary" onClick={increment}>
               +
             </Button>
-            <h2 strong="true" style={{ margin: 0 }}>
+            <h2
+              strong="true"
+              style={{ margin: 0, display: 'inline-block', padding: 20 }}
+            >
               {count}
             </h2>
             <Button type="primary" onClick={decrement}>

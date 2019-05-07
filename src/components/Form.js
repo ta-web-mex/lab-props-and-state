@@ -1,4 +1,5 @@
 import React from 'react'
+import { Input, Icon } from 'antd'
 
 function Form({ form, handleChange }) {
   const { name, surname, age } = form
@@ -13,13 +14,37 @@ function Form({ form, handleChange }) {
         <tbody>
           <tr>
             <td>
-              <input type="text" name="name" onChange={handleChange} />
+              <Input
+                placeholder="Name"
+                prefix={
+                  <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
+                }
+                type="text"
+                name="name"
+                onChange={handleChange}
+              />
             </td>
             <td>
-              <input type="text" name="surname" onChange={handleChange} />
+              <Input
+                placeholder="Surname"
+                prefix={
+                  <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
+                }
+                type="text"
+                name="surname"
+                onChange={handleChange}
+              />
             </td>
             <td>
-              <input type="text" name="age" onChange={handleChange} />
+              <Input
+                placeholder="Age"
+                prefix={
+                  <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
+                }
+                type="text"
+                name="age"
+                onChange={handleChange}
+              />
             </td>
           </tr>
           <tr>
