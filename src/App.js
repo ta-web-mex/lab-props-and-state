@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Form from './components/Form';
+import Counter from './components/Counter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    form: {
+      name: 'Ismael',
+      surname: 'Francisco',
+      age: 20
+    },
+    count: 0
+  }
+
+  handleChange = e => {
+    if(e.target.name==='send') e.preventDefault()
+    const { form } = this.state
+    form[e.target.name] = e.target.value
+    this.setState({ ...form })
+    console.log(e.target.value)
+  }
+
+  increment = e => {
+    const { count } = this.state
+    this.setState({ count: count + 1 })
+  }
+
+  decrement = e => {
+    const { count } = this.state
+    this.setState({ count: count - 1 })
+  }
+
+  render() {
+    const { count } = this.state
+    const {form} = this.state
+    return (
+      <div className="App">
+        <Counter increment={this.increment} decrement={this.decrement} value={count} />
+        <Form handleChange={this.handleChange} inputsValue={form} />
+      </div>
+    )
+  }
 }
 
 export default App;
