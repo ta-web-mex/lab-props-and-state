@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Counter from './components/Counter'
+import Form from './components/Form'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    counter: 0,
+    form: {
+      name: '',
+      surname: '',
+      age: ''
+    }
+  }
+
+  add = () => {
+    this.setState(prevState => {
+      return {counter:(prevState.counter + 1)}
+    })
+  }
+
+  sub = () => {
+    this.setState(prevState => {
+      return {counter: (prevState.counter - 1)}
+    })
+  }
+
+  handleChange = event => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <div className="container">
+          <Counter counter={this.state.counter} add={this.add} sub={this.sub}/>
+          <Form handleChange={this.handleChange} name={this.state.name} surname={this.state.surname} age={this.state.age}/>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
