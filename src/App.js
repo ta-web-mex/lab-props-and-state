@@ -33,10 +33,22 @@ class App extends Component {
     }
   }
 
-  handleChange = change => {
-    this.setState({
-      text: change.target.value
-    })
+  handleChange = (change) => {
+      if(change.target.name === 'name'){
+        this.setState({
+        name: change.target.value
+        })
+      }
+      if(change.target.name === 'surname'){
+        this.setState({
+        surname: change.target.value
+        })
+      }
+      if(change.target.name === 'age'){
+        this.setState({
+        age: change.target.value
+        })
+      }
   }
 
   render(){
