@@ -6,11 +6,6 @@ class Form extends Component {
             text: event.target.value
         })
     }
-    inputChangeT=event => {
-        this.setState({
-            text: event.target.value
-        })
-    }
     render(){
         return(
             <div>
@@ -22,15 +17,15 @@ class Form extends Component {
                 <p>{this.inputChange.text}</p>
                 <input
                 type="text"
-                onChange={this.inputChangeT}
-                value={this.inputChangeT.text}
+                onChange={this.inputChange}
+                value={this.inputChange.text}
                 />
-                <p></p>
+                <p>{this.inputChange.text}</p>
                 <input 
                 type="text"
-                onChange={this.inputChangeT}
-                value={this.inputChangeT.text}/>
-                <p></p>
+                onChange={this.inputChange}
+                value={this.inputChange.text}/>
+                <p>{this.inputChange}</p>
             </div>
         )
     }
