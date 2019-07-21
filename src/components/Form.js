@@ -2,13 +2,20 @@ import React from "react";
 
 const Form = props => {
   return (
-    <div>
-      <input type="text" onChange={props.inputChange} value={props.text} />
-      <p>{props.text}</p>
-      <input type="text" onChange={props.inputChange} value={props.text} />
-      <p>{props.text}</p>
-      <input type="text" onChange={props.inputChange} value={props.text} />
-      <p>{props.text}</p>
+    <div className="forms">
+      <div>
+        <input type="text" onChange={props.inputChange} name="name" />
+
+        <input type="text" onChange={props.inputChange} name="surname" />
+
+        <input type="text" onChange={props.inputChange} name="age" />
+      </div>
+
+      <div className="form-value">
+        <p>{props.form.name}</p>
+        <p>{props.form.surname}</p>
+        <p>{props.form.age}</p>
+      </div>
     </div>
   );
 };
