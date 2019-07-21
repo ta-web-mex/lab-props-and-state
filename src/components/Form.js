@@ -12,9 +12,9 @@ const Form = props => {
       </div>
 
       <div className="form-value">
-        <p>{props.form.name}</p>
-        <p>{props.form.surname}</p>
-        <p>{props.form.age}</p>
+        <p>{props.name}</p>
+        <p>{props.surname}</p>
+        <p>{props.age}</p>
       </div>
     </div>
   );

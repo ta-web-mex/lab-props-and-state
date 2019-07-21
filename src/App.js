@@ -30,37 +30,9 @@ class App extends Component {
   };
 
   inputChange = event => {
-    if (event.target.name === "name") {
-      let value = event.target.value;
-      this.setState(prevState => ({
-        form: {
-          ...prevState.form,
-          name: value
-        }
-      }));
-    } else if (event.target.name === "surname") {
-      let value = event.target.value;
-
-      this.setState(prevState => {
-        return {
-          form: {
-            ...prevState.form,
-            surname: value
-          }
-        };
-      });
-    } else if (event.target.name === "age") {
-      let value = event.target.value;
-
-      this.setState(prevState => {
-        return {
-          form: {
-            ...prevState.form,
-            age: value
-          }
-        };
-      });
-    }
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
@@ -72,7 +44,12 @@ class App extends Component {
           <Counter increase={this.increase} decrease={this.decrease} />
         </div>
 
-        <Form inputChange={this.inputChange} form={this.state.form} />
+        <Form
+          inputChange={this.inputChange}
+          name={this.state.name}
+          surname={this.state.surname}
+          age={this.state.age}
+        />
       </div>
     );
   }
