@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+import Counter from './components/Counter'
+import Form from './components/Form'
+
+export default class App extends Component {
+  state = {
+    counter: 0,
+    form: {
+      text1: '',
+      text2: '',
+      text3: ''
+    }
+  }
+
+  increment = () => {
+    let { counter } = this.state
+    counter++
+    this.setState({ counter })
+  }
+
+  decrement = () => {
+    let { counter } = this.state
+    if (counter <= 0) return
+    counter--
+    this.setState({ counter })
+  }
+
+  handleChange = e => {
+    this.setState({
+      form: { ...this.state.form, [e.target.name]: e.target.value }
+    })
+  }
+
+  render() {
+    const { counter } = this.state
+    return (
+      <div class="container">
+        <Counter increment={this.increment} decrement={this.decrement} counter={counter} />
+
+        <Form handleChange={this.handleChange} formData={this.state.form} />
+      </div>
+    )
+  }
 }
-
-export default App;
