@@ -1,24 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import Counter from './components/Counter';
+import Form from './components/Form';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+  state = {
+    count: 0,
+    form: {
+      name: '',
+      surname: '',
+      age: ''
+    }
+  };
+
+  displayInput = e => {
+    const name = document.querySelector('#name').value;
+    const surname = document.querySelector('#surname').value;
+    const age = document.querySelector('#age').value;
+
+    const form = {
+      name,
+      surname,
+      age
+    };
+
+    this.setState({
+      form
+    });
+  };
+
+  add = () => {
+    let { count } = this.state;
+    count++;
+    this.setState({ count });
+  };
+
+  substract = () => {
+    let { count } = this.state;
+    count--;
+    this.setState({ count });
+  };
+
+  render = () => (
+    <div>
+      <Counter count={this.state.count} add={this.add} substract={this.substract} />
+      <Form
+        name={this.state.form.name}
+        surname={this.state.form.surname}
+        age={this.state.form.age}
+        displayInput={this.displayInput}
+      />
     </div>
   );
 }
