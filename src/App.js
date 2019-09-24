@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import Form from './components/Form'
+import Counter from './components/Counter'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  //We define the variables we will need to change
+  state = {
+    counter: 0,
+    form: {
+      name: '',
+      surname: '',
+      age: ''
+    }
+  }
+
+  mas = () => {
+    let {counter} = this.state
+    counter++
+    this.setState({counter})
+  }
+
+  menos = () => {
+    let {counter} = this.state
+    counter--
+    this.setState({counter})
+  }
+
+  handleChange = (elem) => {
+    let {form} = this.state
+    form.name = document.querySelector('.name').value 
+    form.surname = document.querySelector('.surname').value
+    form.age = document.querySelector('.age').value
+    this.setState({form})
+
+  }
+  
+  render() {
+    const {counter} = this.state
+    const {form} = this.state
+    return (
+      <div className="App">
+        <Counter mas={this.mas} menos={this.menos} counter={counter}/>
+        <Form change={this.handleChange} name={form.name} surname={form.surname} age={form.age}/>
+      </div>
+    )
+  }
 }
 
 export default App;
