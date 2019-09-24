@@ -12,3 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button{
+  margin-left: 1em
+}
+
+.contenedor{
+  background-color: slategrey;
+  display:flex;
+  flex-direction:row;
+  justify-content: center
+}
+
+.inputs{
+  padding: 2em 1em
+}
