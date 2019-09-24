@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
+import Counter from './components/Counter'
+import Form from './components/Form'
 
-function App() {
+class App extends Component{
+  state = {
+    count: 0,
+    form: {
+      name: '',
+      surname: '',
+      age: ''
+    }
+  }
+  more = () =>{
+    let{count}=this.state 
+    count ++
+    this.setState({count})
+  }
+  less = () => {
+    let{count}=this.state 
+    if(count > 0)
+    count --
+    this.setState({count})
+  }
+
+  change = (e) => {
+    this.setState({[e.target.name]: e.target.value });
+  }
+ 
+
+  render(){
+    const count = this.state.count;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className="App" id="main">
+      <Counter more={this.more} less={this.less} count = {count}/>
+      <Form change={this.change} name={this.state.name} surname={this.state.surname} age={this.state.age}/>
     </div>
   );
+}
 }
 
 export default App;
