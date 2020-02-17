@@ -31,3 +31,43 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: tomato;
+
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  padding-top:60px;
+  background-color: wheat;
+  width: 800px;
+}
+.form input{
+  width: 30%;
+}
+.form p{
+  width: 30%;
+}
+
+.counter{
+  display: flex;
+  justify-content: center;
+}
+
+h4{
+  color: gray;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-end;
+  padding-top:100px;
+}
