@@ -31,3 +31,24 @@
     transform: rotate(360deg);
   }
 }
+
+.cuadro{
+  padding:10px;
+  margin:10px;
+}
+.info {
+  padding:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  height: 40%;
+}
+.Contador{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 60vh;
+
+}
