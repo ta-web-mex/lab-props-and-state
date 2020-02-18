@@ -1,3 +1,17 @@
+body{
+  
+background: rgba(104,148,99,1);
+background: -moz-linear-gradient(top, rgba(104,148,99,1) 0%, rgba(104,148,99,1) 8%, rgba(124,163,158,1) 80%, rgba(124,163,158,1) 100%) fixed;
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(104,148,99,1)), color-stop(8%, rgba(104,148,99,1)), color-stop(80%, rgba(124,163,158,1)), color-stop(100%, rgba(124,163,158,1))) fixed;
+background: -webkit-linear-gradient(top, rgba(104,148,99,1) 0%, rgba(104,148,99,1) 8%, rgba(124,163,158,1) 80%, rgba(124,163,158,1) 100%) fixed;
+background: -o-linear-gradient(top, rgba(104,148,99,1) 0%, rgba(104,148,99,1) 8%, rgba(124,163,158,1) 80%, rgba(124,163,158,1) 100%) fixed;
+background: -ms-linear-gradient(top, rgba(104,148,99,1) 0%, rgba(104,148,99,1) 8%, rgba(124,163,158,1) 80%, rgba(124,163,158,1) 100%) fixed;
+background: linear-gradient(to bottom, rgba(104,148,99,1) 0%, rgba(104,148,99,1) 8%, rgba(124,163,158,1) 80%, rgba(124,163,158,1) 100%) fixed;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#689463', endColorstr='#7ca39e', GradientType=0 );
+
+}
+
+
 .App {
   text-align: center;
 }
@@ -9,7 +23,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,12 +35,53 @@
 .App-link {
   color: #61dafb;
 }
+.contador{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  height: 35vh;
+  
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+.btn_container{
+  display: flex;
+  flex-flow: row wrap;
+
+
+}
+button{
+  width: 5rem;
+  height: 4rem;
+  border: transparent;
+  display: block;
+  
+  margin:2% auto;
+
+}
+h2{
+  font-size: 3rem;
+  margin-top: 10%;
+}
+.formulario{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items:center;
+  width: 60vw;
+  margin: 0 auto;
+
+
+
+}
+h3{
+  font-size: 2.5rem;
+}
+input{
+  border: transparent;
+  height: 7vh;
+  text-align: center;
+
 }

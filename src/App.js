@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Contador from './components/Counter'
+import Form from './components/Form'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+
+
+
+  state ={
+   contador:0,
+   form:{
+     name:'',
+     surname:'',
+     age:''
+   }
+ }
+
+incremento = () => {
+  this.setState({ contador: this.state.contador + 1 })
+}
+decremento = () => {
+  this.setState({ contador: this.state.contador - 1 })
 }
 
+manejadoDeInputs = event=>{
+  const {name,value}= event.target
+  this.setState(prevState =>{
+    return {
+      ...prevState,
+      form:{
+        ...prevState.form,
+        [name]:value
+      }
+
+      
+      
+    }
+  })
+}
+  
+  render (){
+    return (
+      <div>
+      <Contador contador= {this.state.contador}
+                incremento={this.incremento}
+                decremento= {this.decremento} />
+      <Form name={this.state.form.name}
+            surname={this.state.form.surname}
+            age={this.state.form.age}
+            manejadoDeInputs ={this.manejadoDeInputs} />
+        
+      </div>
+
+    )
+  }
+  
+}
 export default App;
