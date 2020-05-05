@@ -1,33 +1,58 @@
 .App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  border: 3px solid lightgoldenrodyellow;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  margin: 0 35%;
+  margin-top: 2%;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background-image: url(https://wallpapercave.com/wp/wp4001409.jpg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  color: whitesmoke;
+  font-size: 3.5em;
+
+}
+
+.form {
+  margin: 10%;
+}
+
+button {
+  display: inline-block;
+  padding: .05em 1em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  background-color: #1C2332;
+  font-size: 2.5em;
+}
+
+button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.form input {
+  font-family: 'Roboto';
+  font-size: 24px;
+  width: 280px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 0px;
+}
+
+p {
+  color: whitesmoke;
+  font-size: 1.2em;
 }
