@@ -31,3 +31,40 @@
     transform: rotate(360deg);
   }
 }
+
+.counter {
+  border: 2px solid gray;
+  border-radius: 5%;
+  width: 13%;
+  padding: 2%;
+  margin: 5% 0;
+}
+
+.counter button {
+  margin-left: 10%;
+}
+
+.mainCounter {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 90%;
+  border: 2px solid grey;
+  margin-left: 5%;
+}
+
+.form h2 {
+  width: 100wh;
+}
+
+.inputs > p {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inputs > input {
+  display: flex;
+  justify-content: space-evenly;
+}
